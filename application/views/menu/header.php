@@ -12,7 +12,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 	<style>
-		padding-top: 70px;
+		min-height: 2000px
+		padding-top: 140px;
 	</style>
 
 
@@ -20,7 +21,7 @@
 
 <body>
 	<!-- Fixed navbar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
