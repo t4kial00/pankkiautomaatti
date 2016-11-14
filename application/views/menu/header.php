@@ -44,7 +44,8 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown toggle" data-toggle="dropdown">Asiakkaat<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo site_url('asiakas/naytaAsiakkaat');?>">Näytäasiakkaat</a></li>
+							<li><a href="<?php echo site_url('asiakas/naytaAsiakkaat');?>">Näytä asiakkaat</a></li>
+							<li><a href="<?php echo site_url('asiakas/lisaaAsiakas');?>">Lisää asiakas</a></li>
 						</ul>
 					</li>
 					</li>
@@ -52,6 +53,8 @@
 			</div>
 		</div>
 	</nav>
+
+	<div class="container">
 
 	
 
