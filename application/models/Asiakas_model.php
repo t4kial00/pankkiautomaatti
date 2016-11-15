@@ -13,4 +13,19 @@ class Asiakas_model extends CI_Model {
 		$testi=$this->db->affected_rows();
 		return $testi;
 	}
+
+	public function delAsiakas($id) {
+		$this->db->where('id_asiakas', $id);
+		$this->db->delete('tili');
+
+		$this->db->where('id_asiakas',$id);
+		$this->db->delete('asiakas');
+
+		//$this->db->where()		
+		//$this->db->join('kortti', 'kortti.id_tili=tili.id_tili');
+		$testi=$this->db->affected_rows();
+		return $testi;
+	}
+
+
 }

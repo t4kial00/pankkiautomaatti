@@ -36,18 +36,27 @@
 				<ul class="nav navbar-nav">
 					<li><a href="<?php echo site_url('etusivu');?>">Etusivu</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown toggle" data-toggle="dropdown">Tilit<b class="caret"></b></a>
+						<a href="#" class="dropdown toggle" data-toggle="dropdown">Tilien hallinta<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo site_url('tili/naytaTilit');?>">Näytä tilit</a></li>
+							<li><a href="<?php echo site_url('nosto/naytaNostot');?>">Näytä nostot</a></li>
 						</ul>
 
 						<li class="dropdown">
-						<a href="#" class="dropdown toggle" data-toggle="dropdown">Asiakkaat<b class="caret"></b></a>
+						<a href="#" class="dropdown toggle" data-toggle="dropdown">Asiakkaiden hallinta<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo site_url('asiakas/naytaAsiakkaat');?>">Näytä asiakkaat</a></li>
 							<li><a href="<?php echo site_url('asiakas/lisaaAsiakas');?>">Lisää asiakas</a></li>
 						</ul>
-					</li>
+						</li>
+
+						<li class="dropdown">
+						<a href="#" class="dropdown toggle" data-toggle="dropdown">Korttien hallinta<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo site_url('kortti/naytaKortit');?>">Näytä kortit</a></li>
+							<li><a href="<?php echo site_url('kortti/lisaaKortti');?>">Lisää kortti</a></li>
+						</ul>
+						</li>
 					</li>
 				</ul>
 			</div>
