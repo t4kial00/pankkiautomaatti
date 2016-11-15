@@ -9,7 +9,9 @@ class Asiakas extends CI_Controller {
     	}
 
 		public function naytaAsiakkaat(){
-			//$this->load->model('Asiakas_model');
+
+			$this->load->model('Tili_model');
+			$data['tilit']=$this->Tili_model->haeTilit();
 			$data['asiakas']=$this->Asiakas_model->haeAsiakkaat();
 			$data['sivun_sisalto']='asiakas/naytaAsiakkaat';
 			$this->load->view('menu/sisalto', $data);
