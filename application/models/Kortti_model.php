@@ -26,5 +26,4 @@ class Kortti_model extends CI_Model {
 	}
 
 
-
 }

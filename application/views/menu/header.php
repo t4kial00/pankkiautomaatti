@@ -58,6 +58,11 @@
 						</ul>
 						</li>
 					</li>
+
+					</ul>
+										 <ul class="nav navbar-nav navbar-right">
+					<li><a href="<?php echo site_url('etusivu/logout');?>">Kirjaudu ulos</a></li>
+
 				</ul>
 			</div>
 		</div>

@@ -7,6 +7,7 @@
 <?php
 	foreach ($tili as $rivi) {
 		echo '<tbody><tr><td>'.$rivi['id_tili'].'</td><td>'.$rivi['saldo'].'</td><td>'.$rivi['etunimi'].'</td><td>'.$rivi['sukunimi'].'</td><td>';
+		echo '<a href="poistaTili/'.$rivi['id_tili'].'"class="btn btn-default btn-sm">Poista</a></td><td>';
 	
 ?>
 
@@ -22,7 +23,7 @@
 				</div>
 				<div class="modal-body">
 					<p>
-					<?php print_r($kortit)?>
+					<?php print_r($tili)?>
 					</p>
 				</div>
 				<div class="modal-footer">
