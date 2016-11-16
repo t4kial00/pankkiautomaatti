@@ -39,6 +39,7 @@
 						<a href="#" class="dropdown toggle" data-toggle="dropdown">Tilien hallinta<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo site_url('tili/naytaTilit');?>">Näytä tilit</a></li>
+							<li><a href="<?php echo site_url('tili/lisaaTili');?>">Lisää tili</a></li>
 							<li><a href="<?php echo site_url('nosto/naytaNostot');?>">Näytä nostot</a></li>
 						</ul>
 
