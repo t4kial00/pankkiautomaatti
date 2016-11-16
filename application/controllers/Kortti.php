@@ -59,6 +59,17 @@ class Kortti extends CI_Controller {
 			$data['sivun_sisalto']='kortti/naytaKortit';
 			$this->load->view('menu/sisalto', $data);
 		}
+
+		public function muutaPin($id){
+			$this->load->model('Tili_model');
+			$this->Kortti_model->paivitaPin($id);
+			$data['tili']=$this->Tili_model->haeTilit();
+			$data['kortti']=$this->Kortti_model->haeKortit();
+			$muutos=array("pin"=>$this->input->post('pin'));
+			$data['sivun_sisalto']='kortti/muutaPin';
+			$this->load->view('menu/sisalto', $data);
+
+		}
 	}
 
 
