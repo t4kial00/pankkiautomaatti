@@ -12,6 +12,8 @@
 ?>
 
 	<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Yhdistetyt kortit</button>
+
+
 	<div id="myModal" class="modal fade">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -23,7 +25,17 @@
 				</div>
 				<div class="modal-body">
 					<p>
-					<?php print_r($tili)?>
+
+					<table class="table table-hover">
+					<thead><th>Kortin ID</th><th>Kortin numero</th><th>PIN</th><th>Tilin ID</th></thead>
+					<?php
+						foreach($kortit as $rivi){
+							echo '<tbody><tr><td>'.$rivi['id_kortti'].'</td><td>'.$rivi['kortti_nro'].'</td><td>'.$rivi['pin'].'</td><td>'.$rivi['id_tili'].'</td></tr>';
+						}
+					?>
+					</tbody>
+					<!--<?php print_r($kortit)?>-->
+					</table>
 					</p>
 				</div>
 				<div class="modal-footer">
@@ -32,7 +44,8 @@
 
 		</div>
 	</div>
+
 <?php } ?>
 		</td></tr></tbody>
+		</table>
 
-</table>

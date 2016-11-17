@@ -27,12 +27,10 @@ class Kortti_model extends CI_Model {
 
 	public function paivitaPin($id){
 		$this->db->where('id_kortti', $id);
-		$this->db->set($muutos);
-		$this->db->update('pin');
+		$this->db->update('pin', $muutos);
 
 		$testi=$this->db->affected_rows();
 		return $testi;
-
 	}
 
 

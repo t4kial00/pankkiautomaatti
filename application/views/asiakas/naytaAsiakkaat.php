@@ -12,7 +12,7 @@
 
 	
 ?>
-	<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Yhdistetyt tilit</button>
+	<button type="submit" name="valittutili" value="<?php echo $rivi['id_asiakas'];  ?>" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Yhdistetyt tilit</button>
 	<div id="myModal" class="modal fade">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -24,7 +24,16 @@
 				</div>
 				<div class="modal-body">
 					<p>
-					<?php print_r($tilit)?>
+										<table class="table table-hover">
+					<thead><th>Tilin ID</th><th>Saldo</th><th>Asiakas ID</th></thead>
+					<?php
+						foreach($tilit as $rivi){
+							echo '<tbody><tr><td>'.$rivi['id_tili'].'</td><td>'.$rivi['saldo'].'</td><td>'.$rivi['id_asiakas'].'</td></tr>';
+						}
+					?>
+					</tbody>
+					<!--<?php print_r($kortit)?>-->
+					</table>
 					</p>
 				</div>
 				<div class="modal-footer">

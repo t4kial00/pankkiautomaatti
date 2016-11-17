@@ -3,20 +3,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Asiakas extends CI_Controller {
 
-	    function __construct() {
-        	parent::__construct();
-        	$this->load->model('Asiakas_model');
-    	}
+	function __construct() {
+        parent::__construct();
+        $this->load->model('Asiakas_model');
+    }
 
-		public function naytaAsiakkaat(){
+	public function naytaAsiakkaat(){
+		if($this->session->userdata('logged_in')){
 			$this->load->model('Tili_model');
 			$data['tilit']=$this->Tili_model->haeTilit();
 			$data['asiakas']=$this->Asiakas_model->haeAsiakkaat();
 			$data['sivun_sisalto']='asiakas/naytaAsiakkaat';
 			$this->load->view('menu/sisalto', $data);
-		}	
+		}
+   		else{
+    		//If no session, redirect to login page
+    		redirect('Login/kirjaudu');
+   		}	
+	}
 
-		public function LisaaAsiakas(){
+	public function LisaaAsiakas(){
+		if($this->session->userdata('logged_in')){
 			//$this->load->model('Asiakas_model');
 			$btn=$this->input->post('btnTallenna');
 			$lisaa_asiakas=array(
@@ -38,16 +45,21 @@ class Asiakas extends CI_Controller {
 
 			$data['sivun_sisalto']='asiakas/lisaaAsiakas';
 			$this->load->view('menu/sisalto', $data);
-	
 		}
+   		else{
+    		//If no session, redirect to login page
+    		redirect('Login/kirjaudu');
+   		}	
+}
 
-		/*public function nayta_poistettavat(){
-			$data['asiakas']=$this->Asiakas_model->naytaAsiakkaat();
-			$data['sivun_sisalto']='asiakas/poistaAsiakas';
-			$this->load->view('menu/sisalto', $data);
-		}*/
+	/*public function nayta_poistettavat(){
+		$data['asiakas']=$this->Asiakas_model->naytaAsiakkaat();
+		$data['sivun_sisalto']='asiakas/poistaAsiakas';
+		$this->load->view('menu/sisalto', $data);
+	}*/
 
-		public function poistaAsiakas($id){
+	public function poistaAsiakas($id){
+		if($this->session->userdata('logged_in')){
 			$poista=$this->Asiakas_model->delAsiakas($id);
 			if($poista>0){
 				echo '<script>alert("Poisto onnistui")</script>';
@@ -59,14 +71,9 @@ class Asiakas extends CI_Controller {
 			$data['sivun_sisalto']='asiakas/naytaAsiakkaat';
 			$this->load->view('menu/sisalto', $data);
 		}
-
-
-
-
-
-
-
-		
-
-
+   		else{
+    		//If no session, redirect to login page
+    		redirect('Login/kirjaudu');
+   		}	
+	}
 }

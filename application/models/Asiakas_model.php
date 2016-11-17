@@ -28,4 +28,6 @@ class Asiakas_model extends CI_Model {
 	}
 
 
+
+
 }
