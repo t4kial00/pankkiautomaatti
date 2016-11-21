@@ -16,12 +16,12 @@
 <div class="ruudut">
 	<form class="form-horizontal" method="post" action="lisaaTili">
 		<!-- Text input-->
-		<div class="control-group">
+		<!--<div class="control-group">
 	 		<label for="tili" class="control-label col-xs-2">Tilin numero</label>
 	  		<div class="col-xs-10">
 	    		<input id="tili" class="form-control" name="tili" type="text" placeholder="Tilin numero">
 	  		</div>
-	  	</div>
+	  	</div>-->
 
 	  	<div class="control-group">
 	 		<label for="saldo" class="control-label col-xs-2">Saldo</label>

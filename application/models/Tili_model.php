@@ -8,6 +8,13 @@
 			return $this->db->get()->result_array();
 		}
 
+		public function valitutTilit($id){
+			$this->db->select('*');
+			$this->db->from('tili');
+			$this->db->where('id_asiakas', $id);
+			return $this->db->get()->result_array();
+		}
+
 		public function addTili($lisaa_tili) {
 		$this->db->set($lisaa_tili);
 		$this->db->insert('tili');
@@ -22,6 +29,10 @@
 			$testi=$this->db->affected_rows();
 			return $testi;
 		}
+
+
+
+
 
 
 	}

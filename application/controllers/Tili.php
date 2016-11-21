@@ -22,6 +22,13 @@ class Tili extends CI_Controller {
     		redirect('Login/kirjaudu');
    		}	
 	}	
+		public function naytaValitutKortit($id){
+		//$id=$this->input->post('valittutili');
+		$this->load->model('Kortti_model');
+		$data['kortit']=$this->Kortti_model->valitutKortit($id);
+		$data['sivun_sisalto']='kortti/naytaValitutKortit';
+		$this->load->view('menu/sisalto', $data);
+	}
 
 	public function lisaaTili(){
 		if($this->session->userdata('logged_in')){
@@ -29,8 +36,7 @@ class Tili extends CI_Controller {
 			$data['asiakas']=$this->Asiakas_model->haeAsiakkaat();
 			$btn=$this->input->post('btnLisaa');
 			$lisaa_tili=array(
-				"id_tili"=>$this->input->post('tili'),
-				"saldo"=>$this->input->post('saldo'),
+								"saldo"=>$this->input->post('saldo'),
 				"id_asiakas"=>$this->input->post('idas')
 				);
 			if(isset($btn)){

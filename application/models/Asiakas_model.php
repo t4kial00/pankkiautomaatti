@@ -15,8 +15,8 @@ class Asiakas_model extends CI_Model {
 	}
 
 	public function delAsiakas($id) {
-		$this->db->where('id_asiakas', $id);
-		$this->db->delete('tili');
+		//$this->db->where('id_asiakas', $id);
+		//$this->db->delete('tili');
 
 		$this->db->where('id_asiakas',$id);
 		$this->db->delete('asiakas');
@@ -26,6 +26,10 @@ class Asiakas_model extends CI_Model {
 		$testi=$this->db->affected_rows();
 		return $testi;
 	}
+
+	
+
+
 
 
 

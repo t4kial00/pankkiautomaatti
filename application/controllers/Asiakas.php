@@ -10,6 +10,7 @@ class Asiakas extends CI_Controller {
 
 	public function naytaAsiakkaat(){
 		if($this->session->userdata('logged_in')){
+			
 			$this->load->model('Tili_model');
 			$data['tilit']=$this->Tili_model->haeTilit();
 			$data['asiakas']=$this->Asiakas_model->haeAsiakkaat();
@@ -21,6 +22,16 @@ class Asiakas extends CI_Controller {
     		redirect('Login/kirjaudu');
    		}	
 	}
+
+	public function naytaValitut($id){
+		//$id=$this->input->post('valittutili');
+		$this->load->model('Tili_model');
+		$data['tilit']=$this->Tili_model->valitutTilit($id);
+		$data['sivun_sisalto']='asiakas/naytaValitutTilit';
+		$this->load->view('menu/sisalto', $data);
+	}
+
+	
 
 	public function LisaaAsiakas(){
 		if($this->session->userdata('logged_in')){

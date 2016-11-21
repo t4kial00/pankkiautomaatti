@@ -10,6 +10,13 @@ class Kortti_model extends CI_Model {
 
 	} 
 
+			public function valitutKortit($id){
+			$this->db->select('*');
+			$this->db->from('kortti');
+			$this->db->where('id_tili', $id);
+			return $this->db->get()->result_array();
+		}
+
 		public function addKortti($lisaa_kortti) {
 		$this->db->set($lisaa_kortti);
 		$this->db->insert('kortti');
