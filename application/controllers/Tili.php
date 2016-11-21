@@ -23,11 +23,18 @@ class Tili extends CI_Controller {
    		}	
 	}	
 		public function naytaValitutKortit($id){
+			if($this->session->userdata('logged_in')){
 		//$id=$this->input->post('valittutili');
 		$this->load->model('Kortti_model');
 		$data['kortit']=$this->Kortti_model->valitutKortit($id);
 		$data['sivun_sisalto']='kortti/naytaValitutKortit';
 		$this->load->view('menu/sisalto', $data);
+
+		}
+		else{
+    		//If no session, redirect to login page
+    		redirect('Login/kirjaudu');
+   		}	
 	}
 
 	public function lisaaTili(){

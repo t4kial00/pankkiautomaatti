@@ -24,11 +24,18 @@ class Asiakas extends CI_Controller {
 	}
 
 	public function naytaValitut($id){
+		if($this->session->userdata('logged_in')){
 		//$id=$this->input->post('valittutili');
 		$this->load->model('Tili_model');
 		$data['tilit']=$this->Tili_model->valitutTilit($id);
 		$data['sivun_sisalto']='asiakas/naytaValitutTilit';
 		$this->load->view('menu/sisalto', $data);
+
+		}
+   		else{
+    		//If no session, redirect to login page
+    		redirect('Login/kirjaudu');
+   		}	
 	}
 
 	
